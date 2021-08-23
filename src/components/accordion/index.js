@@ -1,5 +1,5 @@
 import React, {useState, useContext,createContext} from 'react';
-import { Container, Frame, Item, Header, Title, Body, Inner } from './styles/accordion';
+import { Container,  Item, Header, Title, Body, Inner } from './styles/accordion';
 
 
 const ToggleContext = createContext();
@@ -16,11 +16,6 @@ export default function Accordion({children, ...restProps}){
 
 Accordion.Title = function AccordionTitle({ children, ...restProps}){
     return <Title {...restProps}>{children}</Title>;
-
-};
-
-Accordion.Frame = function AccordionFrame({ children, ...restProps}){
-    return <Frame {...restProps}>{children}</Frame>;
 
 };
 
@@ -42,7 +37,7 @@ Accordion.Header = function AccordionHeader({ children, ...restProps}){
     return (
         <Header onClick = {() => setExpand((expand) => !expand )}
          {...restProps}>{children}
-         
+
          {expand ? (
             <img src = './images/icons/close-slim.png' alt = 'Close'/>
             ) :(
