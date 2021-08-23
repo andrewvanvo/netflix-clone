@@ -1,12 +1,13 @@
 import './App.css';
 import Row from './components/Row';
+import requests from './api';
 
 function App() {
   return (
     <div className="App">
-      <h1> test</h1>
-      <Row title = 'Trending Now'></Row>
-      <Row title = 'Action'></Row>
+      
+      <Row title = 'Trending Now' getUrl ={requests.fetchTrending}></Row>
+      <Row title = 'Action' getUrl = {requests.fetchAction}></Row>
       
     </div>
   );
