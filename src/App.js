@@ -1,15 +1,10 @@
-import './App.css';
-import Row from './components/Row';
-import requests from './api';
+import React from 'react';
+import Jumbotron from './components/jumbotron';
+
 
 function App() {
   return (
-    <div className="App">
-      
-      <Row title = 'Trending Now' getUrl ={requests.fetchTrending}></Row>
-      <Row title = 'Action' getUrl = {requests.fetchAction}></Row>
-      
-    </div>
+    <Jumbotron></Jumbotron>
   );
 }
 
