@@ -39,7 +39,17 @@ Accordion.Header = function AccordionHeader({ children, ...restProps}){
     
     const {expand, setExpand} = useContext(ToggleContext);
 
-    return <Header onClick = {() => setExpand((expand) => !expand )} {...restProps}>{children}</Header>;
+    return (
+        <Header onClick = {() => setExpand((expand) => !expand )}
+         {...restProps}>{children}
+         
+         {expand ? (
+            <img src = './images/icons/close-slim.png' alt = 'Close'/>
+            ) :(
+            <img src = './images/icons/add.png' alt = 'Open' />
+        )}
+        </Header>
+    );
 
 };
 
