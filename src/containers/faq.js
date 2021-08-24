@@ -17,6 +17,7 @@ export function FaqContainer() {
             <OptForm>
                 <OptForm.Input placeholder = 'Email Address' />
                 <OptForm.Button>Try it now</OptForm.Button>
+                <OptForm.Break/>
                 <OptForm.Text>
                     Sign up now to experience Netflix. 
                 </OptForm.Text>
