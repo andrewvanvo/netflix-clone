@@ -7,16 +7,19 @@ import {IsUserRedirect} from './helpers/routes';
 
 
 function App() {
+
+  const user = {};
+
   return (
     <Router>
 
-      <Route exact path = '/signin'>
+      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_IN} exact>
         <Signin></Signin>
-      </Route>
-
-      <Route exact path = '/signup'>
+      </IsUserRedirect>
+  
+      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_UP} exact>
         <Signup></Signup>
-      </Route>
+      </IsUserRedirect>
 
       <Route exact path = '/browse'>
         <Browse></Browse>
