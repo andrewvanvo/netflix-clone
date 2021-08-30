@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home, Browse, Signin, Signup } from './pages';
 import * as ROUTES from './constants/routes';
-import {IsUserRedirect} from './helpers/routes';
+import {IsUserRedirect, ProtectRoute} from './helpers/routes';
 
 
 
@@ -13,21 +13,21 @@ function App() {
   return (
     <Router>
 
-      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_IN} exact>
+      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_IN} >
         <Signin></Signin>
       </IsUserRedirect>
   
-      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_UP} exact>
+      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_UP} >
         <Signup></Signup>
       </IsUserRedirect>
 
-      <Route exact path = '/browse'>
+      <ProtectRoute user = {user} path = {ROUTES.BROWSE} >
         <Browse></Browse>
-      </Route>
+      </ProtectRoute>
 
-      <Route exact path = {ROUTES.HOME}>
+      <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.HOME} exact >
         <Home></Home>
-      </Route>
+      </IsUserRedirect>
       
     </Router>
     
