@@ -41,6 +41,7 @@ export function ProtectRoute({user, children, ...rest}){
                         />
                     );
                 }
+                return null;
             }}
         />
     );

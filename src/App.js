@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Home, Browse, Signin, Signup } from './pages';
 import * as ROUTES from './constants/routes';
 import {IsUserRedirect, ProtectRoute} from './helpers/routes';
@@ -8,7 +8,7 @@ import {IsUserRedirect, ProtectRoute} from './helpers/routes';
 
 function App() {
 
-  const user = {};
+  const user = null;
 
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
         <Signup></Signup>
       </IsUserRedirect>
 
-      <ProtectRoute user = {user} path = {ROUTES.BROWSE} >
+      <ProtectRoute user = {user} path = {ROUTES.BROWSE}>
         <Browse></Browse>
       </ProtectRoute>
 

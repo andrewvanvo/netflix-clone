@@ -5,7 +5,7 @@ import { FooterContainer } from '../containers/footer';
 import {HeaderContainer} from '../containers/header';
 import {Form} from '../components';
 import * as ROUTES from '../constants/routes';
-import { waitForElement } from '@testing-library/react';
+
 
 export default function Signup() {
 
@@ -16,7 +16,7 @@ export default function Signup() {
     const [error, setError] = useState('');
     const history = useHistory();
 
-    const isInvalid = firstName === password === "" || email === "";
+    const isInvalid = firstName === "" || password === "" || email === "";
 
     const handleSignup = (event) =>{
         event.preventDefault();
