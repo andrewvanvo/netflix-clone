@@ -35,7 +35,7 @@ export function ProtectRoute({user, children, ...rest}){
                 if (!user) {
                     return (
                         <Redirect to = {{
-                            pathname: 'signin',
+                            pathname: 'signin', //maybe take out
                             state: {from: location},
                         }}
                         />

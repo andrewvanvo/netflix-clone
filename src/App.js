@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-
+      <Switch>
       <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.SIGN_IN} >
         <Signin></Signin>
       </IsUserRedirect>
@@ -28,7 +28,7 @@ function App() {
       <IsUserRedirect user = {user} loggedInPath = {ROUTES.BROWSE} path = {ROUTES.HOME} exact >
         <Home></Home>
       </IsUserRedirect>
-      
+      </Switch>
     </Router>
     
   );
