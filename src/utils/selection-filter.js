@@ -1,0 +1,55 @@
+export default function selectionFilter({series, films}){
+    return{
+        series:[
+            {
+                title: 'Documentaries', 
+                data: series.filter((item) => item.genre === 'documentaries'),
+
+            },
+            {
+                title: 'Comedies', 
+                data: series.filter((item) => item.genre === 'comedies'),
+
+            },
+            {
+                title: 'Children', 
+                data: series.filter((item) => item.genre === 'children'),
+
+            },
+            {
+                title: 'Feel Good', 
+                data: series.filter((item) => item.genre === 'feel-good'),
+
+            },
+        ],
+
+        films: [
+            {
+                title: 'Drama', 
+                data: series.filter((item) => item.genre === 'drama'),
+
+            },
+            {
+                title: 'Children', 
+                data: series.filter((item) => item.genre === 'children'),
+
+            },
+            {
+                title: 'Suspense', 
+                data: series.filter((item) => item.genre === 'suspense'),
+
+            },
+
+            {
+                title: 'Thriller', 
+                data: series.filter((item) => item.genre === 'thriller'),
+
+            },
+            {
+                title: 'Romance', 
+                data: series.filter((item) => item.genre === 'romance'),
+
+            },
+        ]
+    };
+}
